@@ -1,0 +1,15 @@
+html
+	head
+		title Users
+body
+	div#main
+		a(href="../") Home
+		p1= " "
+		a(href="../users/search") Search User
+		p1= " "
+		a(href="../users/register") Register
+		br
+		h2= "User Search Results"
+		each user in users
+			a(href=`${user._id}`) #{user.username}
+			br 

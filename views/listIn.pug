@@ -1,0 +1,19 @@
+html
+	head
+		title Users
+body
+	div#main
+		a(href="../") Home
+		p1= " "
+		a(href="../users/search") Search User
+		p1= " "
+		a(href="../profile") Profile
+		p1= " "
+		a(href="../orderform.html") Order
+		p1= " "
+		a(href="../logout") Log Out
+		br
+		h2= "User Search Results"
+		each user in users
+			a(href=`${user._id}`) #{user.username}
+			br 

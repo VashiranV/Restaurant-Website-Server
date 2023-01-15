@@ -1,0 +1,16 @@
+html
+	head
+		title= user.username
+body
+	div#main
+		a(href="../") Home
+		p1= " "
+		a(href="../users/search") Search User
+		p1= " "
+		a(href="../users/register") Register
+		br
+		h2= user.username
+		each order in user.orders
+			a(href=`/orders/${order._id}`) #{order._id}
+			br
+

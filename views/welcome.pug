@@ -1,0 +1,52 @@
+html(lang='en')
+	head
+	body
+		| 
+		meta(charset='UTF-8')
+		meta(http-equiv='X-UA-Compatible' content='IE=edge')
+		meta(name='viewport' content='width=device-width, initial-scale=1.0')
+		title Document
+		title Welcome
+		style.
+			.column {
+			float: left;
+			}
+			.left {
+			width: 10%;
+			}
+			.right {
+			width: 25%;
+			}
+			.middle {
+			width: 65%;
+			}
+		if auth === false
+			a(href='/') Home
+			p1= " "
+			a(href='/users/search') Search User
+			p1= " "
+			a(href='/users/register') Register
+			br
+			h1 Welcome To The Restaurant Server
+			form(action='/login' method='post')
+				label(for='name') Username:
+				input#name(type='text' name='username')
+				br
+				br
+				label(for='fee') Password:
+				input#pass(type='password' name='password')
+				br
+				br
+				button#submitUser(type='submit') Login
+		if auth === true
+			a(href='/') Home
+			p1= " "
+			a(href='/users/search') Search User
+			p1= " "
+			a(href='/profile') Profile
+			p1= " "
+			a(href='orderform.html') Order
+			p1= " "
+			a(href='/logout') Log Out
+			br
+			h1 Welcome To The Restaurant Server

@@ -1,0 +1,26 @@
+html
+	head
+		title= "Order " + order.id
+body
+	div#main
+		a(href="../") Home
+		p1= " "
+		a(href="../users/search") Search User
+		p1= " "
+		a(href="../profile") Profile
+		p1= " "
+		a(href="../orderform.html") Order
+		p1= " "
+		a(href="../logout") Log Out
+		br
+		h2= "Order ID: " + order.id
+		h3= "Customer: " + order.customer
+		h3= "Restaurant: " + order.restaurantName
+		h3= "Items: "
+		each item in order.order
+			p1 #{item.quantity} x #{item.name}
+			br
+		h3= "Subtotal: " + order.subtotal
+		h3= "Tax: " + order.tax
+		h3= "Delivery Fee: " + order.fee
+		h3= "Total: " + order.total

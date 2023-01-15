@@ -1,0 +1,32 @@
+html
+	head
+		title= user.username
+body
+	div#main
+		a(href="../") Home
+		p1= " "
+		a(href="../users/search") Search User
+		p1= " "
+		a(href="../profile") Profile
+		p1= " "
+		a(href="../orderform.html") Order
+		p1= " "
+		a(href="../logout") Log Out
+		br
+		h2= user.username
+		each order in user.orders
+			a(href=`/orders/${order._id}`) #{order._id}
+			br
+		if authorized === true
+			form(action="/users/changePriv", method="post")
+				p1= "Privacy Mode (Currently " + user.privacy + "):"
+				br
+				input(type="radio" name="mode" value="true")
+				p1 True
+				br
+				input(type="radio" name="mode" value="false")
+				p1 False
+				br
+				input(type="submit")
+
+			

@@ -1,0 +1,26 @@
+html(lang='en')
+	head
+		meta(charset='UTF-8')
+		meta(http-equiv='X-UA-Compatible' content='IE=edge')
+		meta(name='viewport' content='width=device-width, initial-scale=1.0')
+		title Register
+	body
+		form(action='/users/regUser' method='post')
+			a(href='../') Home
+			p1= " "
+			a(href='./search') Search User
+			p1= " "
+			a(href='./register') Register
+			br
+			br
+			if error === true
+				p(style='color:red;') Invalid Register (Duplicate User)
+			label(for='name') Username:
+			input#name(type='text' name='name')
+			br
+			br
+			label(for='fee') Password:
+			input#pass(type='password' name='pass')
+			br
+			br
+			button#submitUser(type='submit') Register
